@@ -3,7 +3,10 @@
   "name": "YouTube Shorts Hider",
   "version": "1.0",
   "description": "Hide all YouTube Shorts on YouTube pages.",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
     "default_icon": {
       "16": "icon16.png",
@@ -16,7 +19,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": [ "<all_urls>"],
       "js": ["contentScript.js"]
     }
   ],
